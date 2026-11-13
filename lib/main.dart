@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'core/theme/app_spacing.dart';
 import 'core/theme/app_text_styles.dart';
 import 'core/theme/app_theme.dart';
+import 'core/widgets/app_button.dart';
 
 void main(){
   runApp(const LibraryHubApp());
@@ -18,7 +19,7 @@ class LibraryHubApp extends StatelessWidget {
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
       themeMode: ThemeMode.system,
-      home: const Scaffold(
+      home:Scaffold(
         body: SafeArea(
           child: Padding(
             padding: EdgeInsets.all(AppSpacing.screenPadding),
@@ -26,7 +27,12 @@ class LibraryHubApp extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text('LibraryHub', style: AppTextStyles.title),
-                Text('Theme test', style: AppTextStyles.body),
+                SizedBox(height: AppSpacing.md),
+                AppButton(label: 'Continue', onPressed: () {}),
+                SizedBox(height: AppSpacing.sm),
+                AppButton(label: 'Continue', onPressed: null),
+                SizedBox(height: AppSpacing.sm),
+                AppButton(label: 'Cancel', outlined: true, onPressed: () {}),
               ],
             ),
           ),
