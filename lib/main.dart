@@ -3,6 +3,7 @@ import 'core/theme/app_spacing.dart';
 import 'core/theme/app_text_styles.dart';
 import 'core/theme/app_theme.dart';
 import 'core/widgets/app_button.dart';
+import 'core/widgets/app_text_field.dart';
 
 void main(){
   runApp(const LibraryHubApp());
@@ -33,6 +34,10 @@ class LibraryHubApp extends StatelessWidget {
                 AppButton(label: 'Continue', onPressed: null),
                 SizedBox(height: AppSpacing.sm),
                 AppButton(label: 'Cancel', outlined: true, onPressed: () {}),
+                SizedBox(height: AppSpacing.md),
+                AppTextField(label: 'Email', hint: 'name@example.com'),
+                SizedBox(height: AppSpacing.sm),
+                AppTextField(label: 'Email', hint: 'name@example.com', errorText: 'Please enter a valid email',),
               ],
             ),
           ),
