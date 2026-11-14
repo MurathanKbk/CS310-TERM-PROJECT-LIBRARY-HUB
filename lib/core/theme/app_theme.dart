@@ -17,6 +17,7 @@ class AppTheme {
       outline: AppColors.divider,
       onSurfaceVariant: AppColors.textSecondary,
       tertiary: AppColors.available,
+      primaryContainer: AppColors.primaryLight,
     ),
   );
 
@@ -34,6 +35,7 @@ class AppTheme {
       outline: AppColorsDark.divider,
       onSurfaceVariant: AppColorsDark.textSecondary,
       tertiary: AppColorsDark.available,
+      primaryContainer: AppColorsDark.primaryLight,
     ),
   );
 }
