@@ -4,6 +4,8 @@ import 'core/theme/app_text_styles.dart';
 import 'core/theme/app_theme.dart';
 import 'core/widgets/app_button.dart';
 import 'core/widgets/app_text_field.dart';
+import 'core/widgets/book_card.dart';
+import 'data/mock_books.dart';
 
 void main(){
   runApp(const LibraryHubApp());
@@ -27,17 +29,12 @@ class LibraryHubApp extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('LibraryHub', style: AppTextStyles.title),
+                Text('Books', style: AppTextStyles.title),
                 SizedBox(height: AppSpacing.md),
-                AppButton(label: 'Continue', onPressed: () {}),
-                SizedBox(height: AppSpacing.sm),
-                AppButton(label: 'Continue', onPressed: null),
-                SizedBox(height: AppSpacing.sm),
-                AppButton(label: 'Cancel', outlined: true, onPressed: () {}),
-                SizedBox(height: AppSpacing.md),
-                AppTextField(label: 'Email', hint: 'name@example.com'),
-                SizedBox(height: AppSpacing.sm),
-                AppTextField(label: 'Email', hint: 'name@example.com', errorText: 'Please enter a valid email',),
+                for (final book in mockBooks) ...[
+                  BookCard(book: book, onTap: () {}, onRemove: () {}),
+                  SizedBox(height: AppSpacing.sm),
+                ],
               ],
             ),
           ),
