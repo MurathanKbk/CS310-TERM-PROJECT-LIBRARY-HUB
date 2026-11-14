@@ -15,6 +15,8 @@ class AppTheme {
       onSurface: AppColors.textPrimary,
       error: AppColors.error,
       outline: AppColors.divider,
+      onSurfaceVariant: AppColors.textSecondary,
+      tertiary: AppColors.available,
     ),
   );
 
@@ -30,6 +32,8 @@ class AppTheme {
       onSurface: AppColorsDark.textPrimary,
       error: AppColorsDark.error,
       outline: AppColorsDark.divider,
+      onSurfaceVariant: AppColorsDark.textSecondary,
+      tertiary: AppColorsDark.available,
     ),
   );
 }
