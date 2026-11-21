@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'core/theme/app_theme.dart';
-import 'features/books/books_screen.dart';
 import 'features/home/home_screen.dart';
 
 void main(){

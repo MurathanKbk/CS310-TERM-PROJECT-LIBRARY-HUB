@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../theme/app_spacing.dart';
 import '../theme/app_text_styles.dart';
 
@@ -12,6 +13,9 @@ class AppTextField extends StatelessWidget {
     this.obscureText = false,
     this.keyboardType,
     this.onChanged,
+    this.onSubmitted,
+    this.readOnly = false,
+    this.onTap,
   });
 
   final String label;
@@ -21,6 +25,9 @@ class AppTextField extends StatelessWidget {
   final bool obscureText;
   final TextInputType? keyboardType;
   final ValueChanged<String>? onChanged;
+  final ValueChanged<String>? onSubmitted;
+  final bool readOnly;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -41,6 +48,10 @@ class AppTextField extends StatelessWidget {
           obscureText: obscureText,
           keyboardType: keyboardType,
           onChanged: onChanged,
+          onSubmitted: onSubmitted,
+          textInputAction: onSubmitted == null ? null : TextInputAction.search,
+          readOnly: readOnly,
+          onTap: onTap,
           style: AppTextStyles.body,
           decoration: InputDecoration(
             hintText: hint,
@@ -48,6 +59,7 @@ class AppTextField extends StatelessWidget {
               color: colors.onSurface.withAlpha(128),
             ),
             errorText: errorText,
+            errorMaxLines: 3,
             errorStyle: AppTextStyles.caption.copyWith(color: colors.error),
             filled: true,
             fillColor: colors.surface,
