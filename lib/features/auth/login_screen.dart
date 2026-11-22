@@ -8,7 +8,7 @@ import '../../core/widgets/app_text_field.dart';
 import '../home/home_screen.dart';
 import 'auth_validators.dart';
 import 'sign_up_screen.dart';
-
+import '../shell/main_shell.dart';
 /// Login screen. UI only in Step 2.2: no real authentication yet.
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -41,7 +41,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
     // Valid input: go to the home screen and remove login from the back stack.
     Navigator.of(context).pushReplacement(
-      MaterialPageRoute<void>(builder: (_) => const HomeScreen()),
+      MaterialPageRoute<void>(builder: (_) => const MainShell()),
     );
   }
 
