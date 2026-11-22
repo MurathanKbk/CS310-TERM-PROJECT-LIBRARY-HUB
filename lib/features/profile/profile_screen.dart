@@ -8,6 +8,7 @@ import '../auth/login_screen.dart';
 import 'change_password_screen.dart';
 import 'edit_profile_screen.dart';
 import 'profile_widgets.dart';
+import '../reservation/my_borrowings_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -95,7 +96,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 SettingsTile(
                   icon: Icons.menu_book_outlined,
                   label: 'My Borrowings',
-                  onTap: () => _comingSoon('My Borrowings'),
+                  onTap: () => Navigator.of(context).push(
+                    MaterialPageRoute<void>(builder: (_) => const MyBorrowingsScreen()),
+                  ),
                 ),
                 SettingsTile(
                   icon: Icons.meeting_room_outlined,
