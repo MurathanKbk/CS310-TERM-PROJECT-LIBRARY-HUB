@@ -4,6 +4,7 @@ import '../../core/theme/app_text_styles.dart';
 import '../../core/widgets/app_button.dart';
 import '../../core/widgets/network_cover.dart';
 import '../../models/book.dart';
+import '../reservation/reservation_form_screen.dart';
 
 class BookDetailsScreen extends StatelessWidget{
   const BookDetailsScreen({super.key, required this.book});
@@ -49,10 +50,18 @@ class BookDetailsScreen extends StatelessWidget{
           ),
           const SizedBox(height: AppSpacing.md),
           //ONGUN rezervasyon reserve formuna giden yer burasi sende.
+          //Halletim. (ongun arda)
+
           AppButton(
             label: 'Reserve',
-            onPressed: book.isAvailable? () {} : null,
-          ),
+            onPressed: book.isAvailable
+                ? () => Navigator.of(context).push(
+              MaterialPageRoute<void>(
+                builder: (_) => ReservationFormScreen(book: book),
+              ),
+            )
+                : null,
+           ),
           const SizedBox(height: AppSpacing.sm),
           AppButton(label: 'Follow for alerts', outlined: true, onPressed:(){}),
         ],
